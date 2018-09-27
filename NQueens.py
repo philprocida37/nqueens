@@ -25,18 +25,18 @@ while listTest > 0:
 
 print("N = " + str(rangeVal) + " | NQ = " + str(nqCandidate)) # print correct nqCandidate & enterd N value
 
-extraCredPrint = numpy.zeros((rangeVal, rangeVal), dtype = str) # numpy matrix of size rangVal x rangeVal, all of which are set to strings (dtype)
-extraCredPrint[:] = '-' # default values in the matrix set to -
+BoardPrint = numpy.zeros((rangeVal, rangeVal), dtype = str) # numpy matrix of size rangVal x rangeVal, all of which are set to strings (dtype)
+BoardPrint[:] = '-' # default values in the matrix set to -
 
 stepThru = 0
 
 while stepThru < rangeVal:
     for x in range(len(nqCandidate)):
         for y in range(len(nqCandidate)):   
-            extraCredPrint[nqCandidate[x], x] = 'Q' # replace - with Q at given coords
+            BoardPrint[nqCandidate[x], x] = 'Q' # replace - with Q at given coords
             stepThru += 1 # stepThru tick
 
-print(extraCredPrint[::-1]) # printing board, [::-1] used to orient the print the correct way
+print(BoardPrint[::-1]) # printing board, [::-1] used to orient the print the correct way
 
 end = time.time() # used  for finding elapsed time at the end of processing
 
